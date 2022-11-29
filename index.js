@@ -4,4 +4,4 @@ const timer = setInterval(() => {
 setTimeout(() => {
   clearInterval(timer);
   console.log('===done===');
-}, 20000);
+}, 60000);
