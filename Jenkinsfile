@@ -1,5 +1,10 @@
 pipeline{
     agent any
+    
+    environment {
+        dockerenv=credentials('dockercred')
+    }
+
     stages{
         stage("Pull Repository"){
             steps{
@@ -21,7 +26,7 @@ pipeline{
 
         stage("Login  to DockerHub"){
             steps{
-                sh "docker login -u $DOCKER_USER -p $DOCKER_PASS"
+                sh 'echo $dockerenv_PSW | docker login -u $dockerenv_USR --password-stdin'
             }
         }
 
