@@ -1,7 +1,6 @@
 pipeline{
     agent any
     stages{
-        {
         stage("Pull Repository"){
             steps{
                 git(url:"https://github.com/gokul1630/Jenkins",branch: 'main')
@@ -21,17 +20,15 @@ pipeline{
         }
 
         stage("Login  to DockerHub"){
-            
             steps{
                 sh "docker login -u $DOCKER_USER -p $DOCKER_PASS"
             }
         }
 
-        steps("Push Docker Image to DockerHub"){
+        stage("Push Docker Image to DockerHub"){
             steps{
                 sh "docker push gokul1630/angular-app:latest"
             }
-        }
         }
     }
 }
