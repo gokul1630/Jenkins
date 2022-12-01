@@ -15,7 +15,7 @@ pipeline{
 
         stage("Run Docker"){
             steps{
-                sh "docker build -f angular-app/Dockerfile -t gokul1630/angular-app:latest ."
+                sh "docker build -t gokul1630/angular-app:latest ."
             }
         }
 
