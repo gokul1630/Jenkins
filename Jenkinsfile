@@ -1,8 +1,8 @@
 pipeline{
     agent any
-    stages("Pull Repository"){
+    stages{
         {
-        stage{
+        stage("Pull Repository"){
             steps{
                 git(url:"https://github.com/gokul1630/angular-app",branch: 'main')
             }
