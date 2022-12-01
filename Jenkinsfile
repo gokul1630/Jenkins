@@ -4,7 +4,7 @@ pipeline{
         {
         stage("Pull Repository"){
             steps{
-                git(url:"https://github.com/gokul1630/angular-app",branch: 'main')
+                git(url:"https://github.com/gokul1630/Jenkins",branch: 'main')
             }
         }    
 
